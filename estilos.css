@@ -1,0 +1,249 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: none;
+}
+
+body {
+    background: #2050f0;
+    color: #fff;
+    font-family: 'Mohave', sans-serif;
+}
+
+/*CONTENEDOR GRID HOME*/
+.contenedor {
+    width: 90%;
+    max-width: 1280px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas: "cabeza cabeza cabeza cabeza"
+                         "navegador navegador navegador navegador"
+                         "lateral principal principal principal"
+                         "lateral principal principal principal"
+                         "pie pie pie pie";
+                         
+}
+.contenedor .cabeza,
+.contenedor .navegador,
+.contenedor .principal,
+.contenedor .lateral,
+.contenedor .pie {
+    background: #444444;
+    padding: 20px;
+    border-radius: 5px;
+
+}
+
+.lateral {
+    position: relative;
+}
+
+.caja_lateral {
+    position:sticky; top: 10px; 
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    text-align: center;
+}
+
+/*CONTENEDOR GRID CLIMA CONTACTO*/
+/*.contenedor2 {
+    width: 90%;
+    max-width: 1280px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas: "cabeza cabeza cabeza cabeza"
+                         "navegador navegador navegador navegador"
+                         "principal principal principal principal"
+                         "principal principal principal principal"
+                         "pie pie pie pie";
+                         
+}
+*/
+.contenedor2 .cabeza,
+.contenedor2 .navegador,
+.contenedor2 .principal,
+.contenedor2 .pie {
+    background: #444444;
+    padding: 20px;
+    border-radius: 5px;
+
+}
+
+.contenedor .cabeza, .contenedor2 .cabeza {
+    background: #7070bb;
+    color: #ffffaa;
+    text-align: center;
+    grid-area: cabeza;
+}
+
+.contenedor .navegador, .contenedor2 .navegador {
+    background: #777777;
+    grid-area: navegador;
+}
+
+.contenedor .principal, .contenedor2 .principal {
+    margin: auto;
+    grid-area: principal;
+}
+
+.contenedor .lateral {
+    grid-area: lateral;
+}
+
+.contenedor .pie, .contenedor2 .pie {
+    text-align: center;
+    grid-area: pie;
+}
+
+.posicion {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    font-size: 15px;
+}
+
+/*SLIDERS*/
+
+.politica, .economia, .deportes {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.politica ul , .economia ul, .deportes ul {
+    display: flex;
+    animation: cambio 10s infinite alternate linear;
+    width: 200%;
+}
+
+.politica li, .economia li, .deportes li {
+    width: 100%;
+    list-style: none;
+    position: relative;
+}
+
+.politica img, .economia img, .deportes img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes cambio{
+    0%{margin-left: 0;}
+    10%{margin-left: 0;}
+    40%{margin-left: -100%;}
+    60%{margin-left: -100%;}
+    90%{margin-left: 0;}
+    100%{margin-left: 0;}
+}
+
+/*RESPONSIVE*/
+
+@media screen and (max-width: 640px) {
+    .contenedor {
+        grid-template-areas: "cabeza cabeza cabeza cabeza"
+                             "navegador navegador navegador navegador"
+                             "lateral lateral lateral lateral"
+                             "principal principal principal principal"
+                             "pie pie pie pie";
+        font-size: 10px;                      
+    }
+
+    header {
+        font-size: 20px;
+    }
+
+    .politica, .economia, .deportes {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+
+    ul {
+        display:flex;
+        justify-content: space-around;
+        
+    }
+
+    a:link {
+        background-color: #555555;
+        padding: 6px;
+        border-radius: 5px;
+    }
+
+    .contenedor2 {
+        grid-template-areas: "cabeza cabeza cabeza cabeza"
+                             "navegador navegador navegador navegador"
+                             "principal principal principal principal"
+                             "principal principal principal principal"
+                             "pie pie pie pie";
+    }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1280px) {
+
+    .politica, .economia, .deportes {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+
+    .contenedor {
+        grid-template-areas: "cabeza cabeza cabeza cabeza"
+                             "navegador navegador lateral lateral"
+                             "principal principal principal principal"
+                             "principal principal principal principal"
+                             "pie pie pie pie";
+        font-size: 14px;                     
+    }
+    .contenedor2 {
+        grid-template-areas: "cabeza cabeza cabeza cabeza"
+                             "navegador navegador navegador navegador"
+                             "principal principal principal principal"
+                             "principal principal principal principal"
+                             "pie pie pie pie";
+    }                         
+}
+
+@media screen and (min-width: 1280px) {
+    .contenedor {
+        grid-template-areas: "cabeza cabeza cabeza cabeza"
+                             "navegador navegador navegador navegador"
+                             "lateral principal principal principal"
+                             "lateral principal principal principal"
+                             "pie pie pie pie";
+    }
+    .contenedor2 {
+        
+        margin: 20px auto;
+        max-width: 1280px;
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas: "cabeza cabeza cabeza cabeza"
+                             "navegador navegador navegador navegador"
+                             "principal principal principal principal"
+                             "principal principal principal principal"
+                             "pie pie pie pie";
+    }                        
+}

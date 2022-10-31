@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Mohave:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+    <title>TUno-TIcia</title>
+</head>
+<body>
+    <div class="contenedor2">
+        <header class="cabeza">
+            <h1>TUno-TIcia</h1>
+        </header>
+        <nav class="navegador">
+            <a href="pagina1tp.html">HOME</a>
+            <a href="pagina2tp.html">CLIMA</a>
+        </nav>
+        <main class="principal">
+        <form action="" method="post" id="formulario">
+            <label for="Nombre">Nombre :</label>
+            <input type="text" id="Nombre" size="25" placeholder="nombre"><br>
+            <label for="Apellido">Apellido :</label>
+            <input type="text" id="Apellido" size="25" placeholder="apellido"><br>
+            <label for="mail">Mail :</label>
+            <input type="text" id="mail" size="25" maxlength="100" value="@">
+            <input type="submit" onclick= 'return enviarFormulario();' value="Enviar"> 
+        </form>
+        <div id="error"></div>
+        </main>
+        <footer class="pie">
+            <p>Todos los derechos reservados 2021</p>
+        </footer>
+    </div>
+</body>
+</html>
