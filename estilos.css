@@ -107,9 +107,11 @@ a {
 }
 
 .contenedor2 .principal {
-    margin: auto;
     grid-area: principal;
+    
 }
+
+
 
 /*.contenedor3 .principal {
     width: 600px;
@@ -206,10 +208,12 @@ a {
 
 
     .contenedor2, .contenedor3 {
+        width: 90%;
+        margin: 20px auto;
         display: grid;
         grid-gap: 20px;
         grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5, auto);
+        grid-template-rows: repeat(5, auto);
         grid-template-areas: "cabeza cabeza cabeza cabeza"
                              "navegador navegador navegador navegador"
                              "principal principal principal principal"
@@ -236,6 +240,11 @@ a {
         font-size: 14px;                     
     }
     .contenedor2, .contenedor3 {
+        width: 90%;
+        margin: 20px auto;
+        max-width: 1280px;
+        display: grid;
+        grid-gap: 20px;
         grid-template-areas: "cabeza cabeza cabeza cabeza"
                              "navegador navegador navegador navegador"
                              "principal principal principal principal"
