@@ -11,7 +11,7 @@ body {
     font-family: 'Mohave', sans-serif;
 }
 
-/*CONTENEDOR GRID HOME*/
+/*CONTENEDOR GRID HOME\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
 .contenedor {
     width: 90%;
     max-width: 1280px;
@@ -78,37 +78,52 @@ a {
 .contenedor2 .cabeza,
 .contenedor2 .navegador,
 .contenedor2 .principal,
-.contenedor2 .pie {
+.contenedor2 .pie,
+.contenedor3 .cabeza,
+.contenedor3 .navegador,
+.contenedor3 .principal,
+.contenedor3 .pie {
     background: #444444;
     padding: 20px;
     border-radius: 5px;
 
 }
 
-.contenedor .cabeza, .contenedor2 .cabeza {
+.contenedor .cabeza, .contenedor2 .cabeza, .contenedor3 .cabeza {
     background: #7070bb;
     color: #ffffaa;
     text-align: center;
     grid-area: cabeza;
 }
 
-.contenedor .navegador, .contenedor2 .navegador {
+.contenedor .navegador, .contenedor2 .navegador, .contenedor3 .navegador {
     background: #777777;
     grid-area: navegador;
 }
 
-.contenedor .principal, .contenedor2 .principal {
+.contenedor .principal, .contenedor2 .principal, .contenedor3 .principal {
     margin: auto;
     grid-area: principal;
 }
+
+.contenedor2 .principal {
+    margin: auto;
+    grid-area: principal;
+}
+
+/*.contenedor3 .principal {
+    width: 600px;
+    height: 600px;
+}*/
 
 .contenedor .lateral {
     grid-area: lateral;
 }
 
-.contenedor .pie, .contenedor2 .pie {
+.contenedor .pie, .contenedor2 .pie, .contenedor3 .pie {
     text-align: center;
     grid-area: pie;
+    align-content: flex-end;
 }
 
 .posicion {
@@ -154,7 +169,7 @@ a {
     100%{margin-left: 0;}
 }
 
-/*RESPONSIVE*/
+/*RESPONSIVE\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
 
 @media screen and (max-width: 640px) {
     .contenedor {
@@ -189,7 +204,12 @@ a {
         border-radius: 5px;
     }
 
-    .contenedor2 {
+
+    .contenedor2, .contenedor3 {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, auto);
         grid-template-areas: "cabeza cabeza cabeza cabeza"
                              "navegador navegador navegador navegador"
                              "principal principal principal principal"
@@ -215,7 +235,7 @@ a {
                              "pie pie pie pie";
         font-size: 14px;                     
     }
-    .contenedor2 {
+    .contenedor2, .contenedor3 {
         grid-template-areas: "cabeza cabeza cabeza cabeza"
                              "navegador navegador navegador navegador"
                              "principal principal principal principal"
@@ -225,6 +245,12 @@ a {
 }
 
 @media screen and (min-width: 1280px) {
+
+    .contenedor3 .principal {
+        width: 600px;
+        height: 600px;
+    }
+
     .contenedor {
         grid-template-areas: "cabeza cabeza cabeza cabeza"
                              "navegador navegador navegador navegador"
@@ -232,18 +258,19 @@ a {
                              "lateral principal principal principal"
                              "pie pie pie pie";
     }
-    .contenedor2 {
+    .contenedor2, .contenedor3 {
         
         margin: 20px auto;
         max-width: 1280px;
         display: grid;
         grid-gap: 20px;
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(5, auto);
+        grid-template-rows: auto auto 295px 295px auto;
         grid-template-areas: "cabeza cabeza cabeza cabeza"
                              "navegador navegador navegador navegador"
                              "principal principal principal principal"
-                             "principal principal principal principal"
+                             "principal principal principal principal"                        
                              "pie pie pie pie";
-    }                        
+    }
+       
 }
